@@ -1,0 +1,119 @@
+*{
+  box-sizing: border-box;
+}
+
+.benefits {
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap ;
+    margin: 0 auto;
+    max-width: 1488px;
+  }
+
+  &__swiper {
+    display: none;
+  }
+}
+
+/* benefit */
+
+.benefit {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 33.333%;
+  padding: 45px 31px 21px 32px;
+  border: 1px solid $dark-grey;
+  transition-property: background-color, color, box-shadow, outline, border-color;
+  transition-duration: .3s;
+  transition-timing-function: ease;
+
+  /* svg */
+
+  &__svg-stroke {
+    fill: none;
+    stroke: $grey;
+    transition: stroke .3s ease-in-out;
+  }
+
+  &__svg-fill {
+    fill: $grey;
+    transition: fill .3s ease-in-out;
+  }
+
+  &__svg {
+    min-width: 50px;
+    stroke-width: 2px;
+  }
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+
+  &__link:focus-visible {
+    outline: none;
+  }
+
+  &__link::after {
+    content:"";
+    position: absolute;
+    width:100%;
+    height:100%;
+    top: 0;
+    left: 0;
+  }
+
+  &__title {
+    max-width: 315px;
+    min-width: 168px;
+    color: $blue;
+    transition: color .3s ease-in-out;
+    @include bodyText-regular(24px, 120%);
+  }
+
+  &__text {
+    max-width: 373px;
+    margin-bottom: 30px;
+    @include bodyText-light(16px, 150%)
+  }
+
+  &__link {
+    align-self: flex-end;
+    color: $blue;
+    @include bodyText-regular(14px, 140%)
+  }
+
+  &:active {
+    background-color: $white-blue;
+    border-color: $white-blue;
+  }
+}
+
+/* benefit focus */
+
+.focusing,
+.focusing .benefit__title,
+.focusing .benefit__link,
+.focusing .benefit__svg-fill {
+  color: $white;
+  fill: $white;
+}
+
+.focusing .benefit__svg-stroke {
+  stroke: $white;
+}
+
+.focusing {
+  background-color: $blue;
+  outline: 2px solid $blue;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-color: $blue;
+  z-index: 2;
+}
+
+@import '../../mixins/media/@benefits.scss';

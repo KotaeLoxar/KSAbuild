@@ -1,0 +1,20 @@
+@import 'untils/variables.scss';
+@import 'mixins/mixins.scss';
+@import 'common/global.scss';
+@import 'common/header.scss';
+@import 'includes/index/hero.scss';
+@import 'includes/index/benefits.scss';
+@import 'includes/index/purchase-stages.scss';
+@import 'includes/index/projects.scss';
+@import 'includes/index/certificates.scss';
+@import 'includes/index/goods-leaders.scss';
+@import 'includes/index/subscribe.scss';
+@import 'common/footer.scss';
+
+.hidden {
+  display: none;
+}
+
+.active {
+  display: block;
+}

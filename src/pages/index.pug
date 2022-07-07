@@ -1,0 +1,20 @@
+extends templates/layout
+
+block variables
+  - var pageTitle = 'KSA';
+
+block header
+  include common/header
+
+block content
+  main.main
+    include includes/index/hero
+    include includes/index/benefits
+    include includes/index/goods-leaders
+    include includes/index/purchase-stages
+    include includes/index/projects
+    include includes/index/certificates
+    include includes/index/subscribe
+
+block footer
+  include common/footer

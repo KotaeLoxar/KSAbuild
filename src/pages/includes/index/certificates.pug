@@ -1,0 +1,25 @@
+section.certificates
+  .container.certificates__container
+    h2.certificates__headline.title Сертификаты
+    .certificates__list-wrapper
+      ul.certificates-photos__list
+        li.certificates-photos__list-item
+          .img-zoom-container
+            +certificates('licence-1', 'licence-1', 'jpg')
+            #myresult.img-zoom-result
+        li.certificates-photos__list-item
+          +certificates('licence-2', 'licence-2', 'jpg')
+        li.certificates-photos__list-item
+          +certificates('licence-3', 'licence-3', 'jpg')
+
+    // Slider main container
+    .swiper.certificates__swiper
+      // Additional required wrapper
+      .swiper-wrapper
+        // Slides
+        .swiper-slide.certificates__swiper-slide
+            +certificates('licence-1', 'licence-1', 'jpg')
+        .swiper-slide.certificates__swiper-slide
+            +certificates('licence-2', 'licence-2', 'jpg')
+        .swiper-slide.certificates__swiper-slide
+            +certificates('licence-3', 'licence-3', 'jpg')

@@ -1,0 +1,105 @@
+@media (min-width: $xl) {
+  .header {
+    &__link:hover + svg {
+      fill: $orange;
+    }
+
+    &__link:active + svg {
+      fill: $red;
+    }
+  }
+}
+
+@media (max-width: $xl-2) {
+  .burger {
+    fill: $white;
+
+    &__svg {
+      width: 35px;
+      height: 30px;
+    }
+  }
+
+  .header {
+    border-bottom: none;
+    background-color: $black;
+
+    &__burger {
+      display: block;
+    }
+
+    &__logo {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &__nav {
+      display: none;
+      position: absolute;
+      left: 0;
+      background-color: $black;
+      width: 100%;
+      max-width: 100%;
+      padding-top: 30px;
+      padding-bottom: 56px;
+    }
+
+    &__search {
+      display: none;
+    }
+
+    &__svg {
+      width: 35px;
+      height: 35px;
+      margin-right: 0px;
+    }
+  }
+
+  .nav {
+    &__list {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    &__list:first-child {
+      display: block;
+    }
+
+    &__item:not(:last-child) {
+      margin-right: 0;
+      margin-bottom: 30px;
+    }
+
+    &__mobile-form {
+      display: flex;
+      margin-left: 29px;
+      margin-right: 29px;
+    }
+
+    &__mobile-form input {
+      width: 100%;
+      background-color: inherit;
+      border: none;
+      text-align: center;
+      color: $white;
+      border-bottom: 1px solid white;
+      border-radius: 0;
+      padding-bottom: 5px;
+      margin-bottom: 40px;
+    }
+
+    &__mobile-form input:focus {
+      border-color: $orange;
+    }
+  }
+
+
+  .order-desck {
+    display: none;
+  }
+
+  .order-mobile {
+    display: block;
+  }
+
+}

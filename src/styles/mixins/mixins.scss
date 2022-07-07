@@ -1,0 +1,28 @@
+//Шрифты для сайта
+@mixin bodyText-light($fontSize, $lineHeight) {
+  font-family: Ubuntu, sans-serif;
+  font-weight: 300;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+}
+
+@mixin bodyText-regular($fontSize, $lineHeight) {
+  font-family: Ubuntu, sans-serif;
+  font-weight: 400;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+}
+
+@mixin bodyText-medium($fontSize, $lineHeight) {
+  font-family: Ubuntu, sans-serif;
+  font-weight: 500;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+}
+
+@mixin bodyText-bold($fontSize, $lineHeight) {
+  font-family: Ubuntu, sans-serif;
+  font-weight: 700;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+}

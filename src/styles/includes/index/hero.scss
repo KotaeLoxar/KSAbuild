@@ -1,0 +1,42 @@
+.hero {
+  background-image: url('../img/background-hero.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: $white;
+  @include bodyText-medium(14px, 1.25);
+
+  &__container {
+    padding-top: 208px;
+    padding-bottom: 208px;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 64px;
+    margin-bottom: 40px;
+  }
+
+  &__description {
+    text-align: center;
+    @include bodyText-light(32px, 140%);
+    font-size: 32px;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    max-width: 426px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__text-decoration {
+    @include bodyText-regular(32px, 140%)
+  }
+}
+
+@import '../../mixins/media/@index.scss';

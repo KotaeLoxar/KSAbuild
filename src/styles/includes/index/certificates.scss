@@ -1,0 +1,41 @@
+.certificates {
+  &__list-wrapper {
+    display: grid;
+    justify-content: center;
+  }
+
+  &__headline {
+    margin-bottom: 50px;
+    text-align: center;
+    @include bodyText-regular(38px, 120%)
+  }
+
+  &-photos__list {
+    display: grid;
+    grid-template-columns:  1fr 1fr 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 15px;
+    &-item {
+      display: grid;
+      justify-content: center;
+    }
+  }
+
+  &__swiper {
+    display: none;
+  }
+
+  &__img {
+    border-radius: 5px;
+    transition: all .3s ease;
+  }
+
+  &__img:hover {
+    transform: scale(1.35);
+    cursor: zoom-in;
+  }
+}
+
+
+
+@import '../../mixins/media/@certificates.scss';

@@ -1,0 +1,111 @@
+@media (max-width: $xl) {
+  .projects {
+    &__info {
+      left: -50%;
+      width: 66%;
+    }
+
+    &__arrow {
+      right: 85px;
+    }
+  }
+
+  .arrow-active {
+    width: 20px;
+    height: 20px;
+  }
+
+  @keyframes arrow-active {
+    0% {
+        opacity: 0;
+        transform: translate(0, -23px) rotate(-45deg);
+    }
+    10%, 90% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+        transform: translate(0, 0) rotate(-45deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(0, 23px) rotate(-45deg);
+    }
+  }
+}
+
+@media (max-width:$x-xl-1) {
+  .projects {
+    &__info {
+      width: 75%;
+      left: 0;
+    }
+
+    &__info_active {
+      transform: none;
+    }
+  }
+
+  .arrow-active {
+    display: none;
+  }
+}
+
+@media (max-width: $xl-2) {
+  .projects {
+    &__info {
+      width: 100%;
+    }
+  }
+
+  .swiper-pagination-bullet {
+    background: $white;
+  }
+}
+
+@media (max-width: $xl-4) {
+  .projects {
+    &__title {
+      font-size: 18px;
+      margin-bottom: 2px;
+    }
+
+    &__thesis {
+      font-size: 14px;
+      margin-bottom: 11px;
+    }
+
+    &__line {
+      margin-bottom: 11px;
+    }
+
+    &__description {
+      font-size: 12px;
+      max-width: 317px;
+    }
+  }
+}
+
+@media (max-width: $xs) {
+  .projects {
+    &__info {
+      padding-top: 30px;
+      padding-left: 28px;
+    }
+
+    &__line {
+      width: 90%;
+    }
+
+    &__description {
+      max-width: 197px;
+    }
+  }
+
+  .projects__swiper > .swiper-pagination-bullets,
+  .projects__swiper > .swiper-pagination-bullets.swiper-pagination-horizontal,
+  .projects__swiper > .swiper-pagination-custom,
+  .projects__swiper > .swiper-pagination-fraction  {
+    left: 90%;
+  }
+}

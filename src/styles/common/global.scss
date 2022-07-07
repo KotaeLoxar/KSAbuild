@@ -1,0 +1,306 @@
+@font-face {
+  font-family: "Ubuntu";
+  font-weight: 300;
+  font-display: swap;
+  src: local("Ubuntu-Light"),
+       url("../../resources/fonts/ubuntu-light.woff2") format("woff2"),
+       url("../../resources/fonts/ubuntu-light.woff") format("woff"),
+       url("../../resources/fonts/ubuntu-light.ttf") format("ttf");
+}
+
+@font-face {
+    font-family: "Ubuntu";
+    font-display: swap;
+    font-weight: 400;
+    src: local("Ubuntu-Regular"),
+         url("../../resources/fonts/ubuntu-regular.woff2") format("woff2"),
+         url("../../resources/fonts/ubuntu-regular.woff") format("woff"),
+         url("../../resources/fonts/ubuntu-regular.ttf") format("ttf");
+}
+
+@font-face {
+    font-family: "Ubuntu";
+    font-display: swap;
+    font-weight: 500;
+    src: local("Ubuntu-Medium"),
+         url("../../resources/fonts/ubuntu-medium.woff2") format("woff2"),
+         url("../../resources/fonts/ubuntu-medium.woff") format("woff"),
+         url("../../resources/fonts/ubuntu-medium.ttf") format("ttf");
+}
+
+@font-face {
+    font-family: "Ubuntu";
+    font-display: swap;
+    font-weight: 700;
+    src: local("Ubuntu-Bold"),
+         url("../../resources/fonts/ubuntu-bold.woff2") format("woff2"),
+         url("../../resources/fonts/ubuntu-bold.woff") format("woff"),
+         url("../../resources/fonts/ubuntu-bold.ttf") format("ttf");
+}
+
+ul, ol {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $black0_5;
+}
+
+a:-webkit-any-link:focus-visible {
+  outline-offset: 0;
+}
+
+:focus-visible {
+  outline: -webkit-focus-ring-color 0 0;
+}
+
+:focus {
+  outline: -webkit-focus-ring-color 0 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, p {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $fontFamily;
+  min-width: 360px;
+}
+
+section {
+  margin-bottom: 200px;
+}
+
+.container {
+  margin-left: 216px;
+  margin-right: 216px;
+}
+
+/* svg (название класса соответствует названию svg файла)*/
+
+.slider-arrow {
+  stroke: $black;
+  cursor: pointer
+}
+
+.slider-arrow-circle {
+  fill: none;
+}
+
+.slider-arrow-path {
+  stroke: none;
+}
+
+.slider-arrow:hover {
+  stroke: $orange;
+  fill: $orange;
+}
+
+.slider-arrow:focus-visible {
+  stroke: $orange;
+  fill: $orange;
+}
+
+.slider-arrow:active {
+  stroke: $dark-orange;
+  fill: $dark-orange;
+}
+
+.chat-bot {
+  stroke: $white;
+  cursor: pointer
+}
+
+.chat-bot-circle {
+  fill: none;
+}
+
+.chat-bot-path {
+  fill: none;
+}
+
+.chat-bot:hover {
+  stroke: $blue;
+}
+
+.chat-bot:focus-visible {
+  stroke: $blue;
+}
+
+.chat-bot:active {
+  stroke: $dark-blue;
+}
+
+.counter-minus {
+  fill: $black;
+}
+
+.counter-plus {
+  fill: $black;
+}
+
+/* Ссылки (везде для ссылок используем класс link, для ссылок оранжевых, приписываем еще один класс link-orange, для ссылок без нижнего подчеркивания при hover, приписываем класс not-a-link)*/
+
+.link {
+  --s: 0.1em;
+
+  color: #0000;
+  padding-bottom: var(--s);
+  background:
+    linear-gradient(90deg, $orange 50%,$white 0) calc(100% - var(--_p,0%))/200% 100%,
+    linear-gradient($orange 0 0) 0% 100%/var(--_p,0%) var(--s) no-repeat;
+  -webkit-background-clip: text,padding-box;
+          background-clip: text,padding-box;
+  transition: 0.3s;
+}
+
+.link:hover {
+  color: $orange;
+  --_p: 100%
+}
+
+.link:focus-visible:not(:active) {
+  background-color: $dark-orange;
+  color: $white;
+}
+
+.link:active:not(:focus-visible) {
+  color: $red;
+  border-bottom: none;
+}
+
+.noBorder-link:hover {
+  border-bottom: none;
+}
+
+/* кнопки  (везде для кнопок ставим класс, и рядом класс для кнопок с заливкой - btn-fill, без заливки - btn-stroke)*/
+
+.btn {
+  padding: 19px 60px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: $white;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn-fill {
+  color: $white;
+  background-color: $orange;
+}
+
+.btn-fill:hover {
+  background-color: $dark-orange;
+}
+
+.btn-fill:focus-visible {
+  outline: 1px solid $blue;
+}
+
+.btn-fill:active {
+  background-color: $red;
+}
+
+.btn-fill:disabled {
+  background-color: $dark-white;
+  color: $grey;
+}
+
+.btn-stroke {
+  border: 1px solid $orange;
+}
+
+.btn-stroke:hover {
+  color: $white;
+}
+
+.btn-stroke:focus-visible {
+  outline: 1px solid $blue;
+  background-color: $orange;
+  color: $white;
+}
+
+.btn-stroke:active {
+  border-color: $dark-orange;
+  color: $dark-orange;
+}
+
+.btn-stroke:disabled {
+  border-color: $grey;
+  color: $grey;
+}
+
+.btn-stroke {
+  background:
+    linear-gradient($orange 100%, #fff 0) 0 var(--_d, 0) /100% 200% no-repeat,
+    linear-gradient(#0000 50%, $orange 0) 0 var(--_d, 0) /100% 200% no-repeat;
+  -webkit-background-clip: text,padding-box;
+  background-clip: text,padding-box;
+  transition: 0.5s
+}
+.btn-stroke:hover {
+  --_d: 100%;
+}
+
+/* чекбоксы ()*/
+
+.checkbox {
+  color: $black;
+  padding-left: 1.2em;
+}
+
+.checkbox__check {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.checkbox__mark {
+  position: absolute;
+  margin-left: -30px;
+  margin-top: 15px;
+  width: 20px;
+  height: 20px;
+  box-shadow: 0 0 0 1px $black;
+}
+
+.checkbox__check:focus-visible+.mark {
+  box-shadow: 0 0 0 1px $blue;
+}
+
+.checkbox__check:checked+.checkbox__mark {
+  background-image: url('/check.svg');
+  box-shadow: 0 0 0 1px $blue;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* черный чекбокс*/
+
+.mark-black {
+  margin-left: -25px;
+  margin-top: 18px;
+  width: 15px;
+  height: 15px;
+}
+
+.checkbox__check:checked+.mark-black {
+  background-image: url('/check-black.svg');
+  box-shadow: 0 0 0 1px $black;
+}
+
+@import '../mixins/media/@global.scss';

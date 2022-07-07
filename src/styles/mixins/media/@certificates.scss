@@ -1,0 +1,43 @@
+@media (max-width: $xl-3) {
+  .certificates {
+    &-photos__list {
+      display: none;
+    }
+
+    &__headline {
+      text-align: left;
+    }
+
+    &__swiper {
+      display: block;
+      margin: 0;
+    }
+
+    &__swiper-slide {
+      width: 290px;
+    }
+
+    &__img {
+      pointer-events: none;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .certificates {
+    &__container {
+      margin: 0 15px;
+    }
+
+    &-photos__list {
+      &-item {
+        margin-right: 0;
+      }
+    }
+
+    &__headline {
+      margin-bottom: 25px;
+      @include bodyText-regular(24px, 120%)
+    }
+  }
+}

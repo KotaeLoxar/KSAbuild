@@ -1,0 +1,30 @@
+@media (max-width: $xl-4) {
+  .purchase-stages {
+    &__slide {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: flex-start;
+    }
+
+    &__text-container {
+      margin-left: 0;
+      margin-bottom: 25px;
+    }
+
+    &__title {
+      margin-bottom: 10px;
+      @include bodyText-regular(22px, 120%);
+    }
+
+    &__duration {
+      margin-bottom: 20px;
+      @include bodyText-light(14px, 140%);
+      color: $black0_5;
+    }
+
+    &__slide {
+      min-height: 556px;
+      justify-content: space-between;
+    }
+  }
+}

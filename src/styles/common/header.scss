@@ -1,0 +1,159 @@
+.header {
+  position: fixed;
+	top: 0;
+  left: 0;
+	right: 0;
+  border-bottom: 1px solid $dark-white;
+  width: 100%;
+  font-size: 16px;
+  transition: all .3s ease;
+  z-index: 3;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    animation-name: bounce;
+    z-index: 2;
+  }
+
+  &__burger {
+    display: none;
+  }
+
+  &__logo {
+    margin-right: 50px;
+
+    &__link {
+      display: block;
+      line-height: 0;
+    }
+  }
+
+  &__search {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    position: relative;
+    margin-right: 26px;
+    margin-left: auto;
+  }
+
+  &__order {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    position: relative;
+    margin-right: 0;
+  }
+
+  &__order > a {
+    display: inline-block;
+  }
+
+  &__svg {
+    width: 24px;
+    height: 23px;
+    margin-right: 12px;
+    fill: $white;
+  }
+
+  &__link::after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  &__search-form {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 57px;
+    padding-bottom: 45px;
+    background-color: $white-background;
+    z-index: 3;
+  }
+}
+
+.header.out {
+	transform: translateY(-100%);
+}
+
+.header-up-effect {
+  background-color: $black;
+  border-bottom-color: $black;
+}
+
+.logo, .logo__svg {
+  width: 50px;
+  height: 50px;
+}
+
+.nav {
+  max-width: 60%;
+  margin-right: auto;
+
+  &__item:first-child {
+    display: none;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 40px;
+  }
+
+  &__mobile-form {
+    display: none;
+  }
+}
+
+.search-form {
+  &__form {
+    display: flex;
+  }
+}
+
+.search-form input {
+  width: 570px;
+  margin-right: auto;
+  border: none;
+  border-bottom: 1px solid $light-grey-2;
+}
+
+.select2-container--default .select2-selection--single {
+  border: none;
+  border-bottom: 1px solid $light-grey-2;
+  border-radius: 0;
+}
+
+.burger__svg rect{
+	transition: transform 0.25s;
+}
+.burger-svg-active rect:nth-of-type(1){
+	transform: rotate(45deg);
+	transform-origin: -1px 3px;
+}
+.burger-svg-active rect:nth-of-type(2){
+	display: none;
+}
+.burger-svg-active rect:nth-of-type(3){
+	transform: rotate(-45deg);
+	transform-origin: 0px 26px;
+}
+
+.order-mobile {
+  display: none;
+}
+
+@import '../mixins/media/@header.scss';
+

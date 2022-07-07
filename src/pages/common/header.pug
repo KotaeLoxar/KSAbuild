@@ -1,0 +1,44 @@
+header.header
+  .container.header__container
+    .header__burger.burger
+      svg(class="burger__svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35px" height="30px")
+        rect(width="35" height="4" fill="white")
+        rect(y="13" width="35" height="4" fill="white")
+        rect(y="26" width="35" height="4" fill="white")
+    .header__logo.logo
+      a(href='#' aria-label="Перейти на главную").header__logo__link
+        svg.logo__svg
+          use(xlink:href="../../img/sprite.svg#logo")
+    nav.header__nav.nav
+      form(action="" id="search-product-mobile" class="nav__mobile-form")
+        input(type="text" name="search-query" placeholder="Поиск товара")
+      ul(class="nav__list")
+        li.nav__item
+          form(action="" id="search-product" class="search-form__form")
+            input(type="text" name="search-query" placeholder="Поиск товара")
+        each item in [{name: 'Каталог', link: '#', ariaLabel: 'Перейти на страницу каталога'}, {name: 'Доставка', link: '#', ariaLabel: 'Перейти на страницу доставки'}, {name: 'Помощь', link: '#', ariaLabel: 'Перейти на страницу помощи'}, {name: 'Производство', link: '#', ariaLabel: 'Перейти на страницу производства'}]
+          li.nav__item
+            a(href=item.link class='link' aria-label=ariaLabel)= item.name
+    .header__search-form.search-form.hidden
+      .container
+        form(action="" id="search-product" class="search-form__form")
+          input(type="text" name="search-query" placeholder="Введите название товара")
+          select(class="js-example-basic-single" name="select-product")
+            option(value="1") Все товары
+            option(value="2") category2
+            option(value="3") category3
+          button(type="submit" form="search-product")
+            svg.header__svg
+              use(xlink:href="../../img/sprite.svg#search")
+    .header__search
+      a(href="#" class="header__link link" aria-label='Поиск по товарам') Поиск
+      svg.header__svg
+        use(xlink:href="../../img/sprite.svg#search")
+    .header__order.order-desck
+      a(href="#" class="header__link link" aria-label='Перейти в корзину') Корзина
+      svg.header__svg
+        use(xlink:href="../../img/sprite.svg#cart")
+    .header__order.order-mobile
+      a(href="#" aria-label='Перейти в корзину')
+        svg.header__svg
+          use(xlink:href="../../img/sprite.svg#cart")

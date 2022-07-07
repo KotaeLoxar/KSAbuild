@@ -1,0 +1,51 @@
+.subscribe {
+  background-color: $white-blue;
+
+  &__container {
+    padding: 60px 0;
+  }
+
+  &__text {
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 60px;
+    max-width: 762px;
+    @include bodyText-medium(24px, 140%)
+  }
+
+  &__colortext {
+    color: $orange;
+  }
+
+  &__form {
+    display: flex;
+    justify-content: center;
+     input:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__input {
+    padding: 14px;
+    border: 1px solid $grey;
+    color: $black;
+    border-radius: 5px;
+    background-color: transparent;
+    @include bodyText-regular(14px, 140%)
+  }
+
+  &__input-name {
+    width: 260px;
+  }
+
+  &__input-email {
+    width: 320px;
+  }
+
+  &__btn {
+    padding: 12px 47px;
+    @include bodyText-regular(16px, 150%)
+  }
+}
+
+@import '../../mixins/media/@subscribe.scss';

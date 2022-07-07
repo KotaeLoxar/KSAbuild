@@ -1,0 +1,148 @@
+.projects {
+  position: relative;
+  color: $white;
+  @include bodyText-regular(18px, 125%);
+
+  &__wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__info {
+    position: absolute;
+    top: 0;
+    bottom: 5px;
+    left: -45%;
+    width: 60%;
+    z-index: 2;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    padding-top: 113px;
+    padding-left: 50px;
+    transform: translateX(0%);
+    transition: transform 1s;
+  }
+
+  &__info_active {
+    transform: translateX(75%);
+    transition: 1s;
+  }
+
+  &__title {
+    font-size: 40px;
+    margin-bottom: 9px;
+  }
+
+  &__thesis {
+    margin-bottom: 19px;
+    color: $light-grey;
+  }
+
+  &__line {
+    width: 344px;
+    height: 1px;
+    border: 1px solid $white;
+    margin-bottom: 30px;
+    line-height: 150%;
+  }
+
+  &__arrow {
+    width: auto;
+    display: inline-block;
+    position: absolute;
+    right: 98px;
+    line-height: 0;
+  }
+
+  &__arrow svg {
+    width: 11px;
+    height: 18px;
+    fill: rgba($color: #EAECEA, $alpha: 0.65);
+  }
+
+  &__info:hover &__arrow {
+    fill: #EAECEA;
+  }
+
+  &__description {
+    position: absolute;
+    max-width: 531px;
+    top: 30px;
+  }
+
+  &__pagination {
+    position: absolute;
+    z-index: 3;
+  }
+
+  &__mask {
+    position: relative;
+    overflow: hidden;
+  }
+}
+
+.info  {
+  &__description {
+    position: static;
+  }
+}
+
+.arrow-active {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  // margin: 30px auto 80px auto;
+  transform: rotate(-90deg);
+}
+.arrow-active:before,
+.arrow-active:after {
+  content: '';
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border-left: 5px solid $white;
+  border-bottom: 5px solid $white;
+  animation: arrow-active 3s linear infinite;
+}
+.arrow-active:after {
+  animation: arrow-active 3s linear infinite -1.5s;
+}
+@keyframes arrow-active {
+  0% {
+      opacity: 0;
+      transform: translate(0, -53px) rotate(-45deg);
+  }
+  10%, 90% {
+      opacity: 0;
+  }
+  50% {
+      opacity: 1;
+      transform: translate(0, 0) rotate(-45deg);
+  }
+  100% {
+      opacity: 0;
+      transform: translate(0, 53px) rotate(-45deg);
+  }
+}
+
+.projects__swiper > .swiper-pagination-bullets,
+.projects__swiper > .swiper-pagination-bullets.swiper-pagination-horizontal,
+.projects__swiper > .swiper-pagination-custom,
+.projects__swiper > .swiper-pagination-fraction  {
+  left: 95%;
+  top: 45%;
+  width: 35px;
+
+}
+
+.projects__pagination > .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+}
+
+.projects__pagination > .swiper-pagination-bullet-active {
+  background-color: $black;
+}
+
+@import '../../mixins/media/@projects.scss';
+

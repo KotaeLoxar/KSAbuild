@@ -1,0 +1,72 @@
+@media (min-width:$xl) {
+  .title {
+    text-align: center;
+    margin-bottom: 50px;
+    @include bodyText-regular(44px, 120%);
+  }
+}
+
+@media (max-width:$xl) {
+  .title {
+    text-align: start;
+    margin-bottom: 25px;
+    @include bodyText-regular(38px, 120%);
+  }
+}
+
+@media (max-width:$lg) {
+
+  .hero {
+    &__title {
+      text-align: left;
+      margin-bottom: 25px;
+    }
+
+    &__description {
+      margin-left: 0;
+      text-align: left;
+      margin-bottom: 50px;
+    }
+
+    &__buttons {
+      margin-left: 0;
+      max-width: 420px;
+    }
+  }
+}
+
+@media (max-width:$xs) {
+  .container-hero {
+    padding-top: 160px;
+    padding-bottom: 100px;
+  }
+
+  .hero {
+    &__title {
+      font-size: 41px;
+    }
+
+    &__description {
+      font-size: 18px;
+      max-width: 360px;
+      margin-bottom: 44px;
+
+    }
+
+    &__text-decoration {
+      font-size: 18px;
+    }
+
+    &__buttons {
+      flex-direction: column;
+      max-width: 100%;
+      text-align: center;
+    }
+
+    &__buttons .btn:first-child {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+

@@ -1,0 +1,203 @@
+mixin checkbox(checkbox-text)
+  label.checkbox(for='check')
+    input#check.checkbox__check(type='checkbox')
+    span.checkbox__mark
+    |         #{checkbox - text}
+
+mixin checkbox-black(checkbox-text)
+  label.checkbox(for='check-black')
+    input#check-black.checkbox__check(type='checkbox')
+    span.checkbox__mark.mark-black
+    |         #{checkbox - text}
+
+//Кнопки
+mixin buttonFill(link='#', title, ariaLabel)
+  a(href=link class="btn btn-fill", aria-label=ariaLabel)= title
+
+mixin button(link='#', title, ariaLabel)
+  a(href=link class="btn btn-stroke", ariaLabel=ariaLabel)= title
+
+//- 1,5,6 fill; 2,3,4 stroke
+mixin benefit-card(title, text, link, svg, color)
+  .benefits__card.benefit
+    .benefit__top
+      .benefit__head
+        p.benefit__title #{title}
+        svg(class='benefit__svg benefit__svg-'+color height='50' width='63')
+          use(xlink:href='../img/sprite.svg#'+svg)
+      p.benefit__text #{text}
+    a.benefit__link(href='#') #{link}
+
+mixin photo-project(alt, name, format="jpg")
+  picture
+    source(srcset="/img/"+name+"-360"+".webp" type="image/webp" media="(max-width: 360px)")
+    source(srcset="/img/"+name+"-360."+format type="image/"+format media="(max-width: 360px)")
+    source(srcset="/img/"+name+"-480"+".webp" type="image/webp" media="(max-width: 480px)")
+    source(srcset="/img/"+name+"-480."+format type="image/"+format media="(max-width: 480px)")
+    source(srcset="/img/"+name+"-768"+".webp" type="image/webp" media="(max-width: 768px)")
+    source(srcset="/img/"+name+"-768."+format type="image/"+format media="(max-width: 768px)")
+    source(srcset="/img/"+name+"-1366"+".webp" type="image/webp" media="(max-width: 1366px)")
+    source(srcset="/img/"+name+"-1366."+format type="image/"+format media="(max-width: 1366px)")
+    source(srcset="/img/"+name+".webp" type="image/webp")
+    img(src="/img/"+name+"."+format alt=alt)
+
+mixin li-benefit-card(title, text, link, svg, color)
+  li.benefits__card.benefit
+    .benefit__top
+      .benefit__head
+        p.benefit__title #{title}
+        svg(class='benefit__svg benefit__svg-' + color height='50' width='63')
+          use(xlink:href='../img/sprite.svg#' + svg)
+      p.benefit__text #{text}
+    a.benefit__link(href='#') #{link}
+
+
+// Миксины для сертификатов
+mixin certificates(alt, name, format="jpg")
+  picture
+    source(srcset="../../img/index/certificates/" + name + "-1600" + ".webp" type="image/webp" media="(max-width: 1600px)").certificates__img
+    source(srcset="../../img/index/certificates/" + name + "-1600." + format type="image/" + format media="(max-width: 1600px)").certificates__img
+    source(srcset="../../img/index/certificates/" + name + ".webp" type = "image/"+"webp").certificates__img
+    img(src="../../img/index/certificates/" + name + "." + format alt=alt).certificates__img
+
+
+//Миксины для этапов работы
+mixin photo-purchase-stages(alt, name, format="jpg")
+  picture
+    source(srcset="../../img/index/purchase/" + name + "-360" + ".webp" type="image/webp" media="(max-width: 360px)").purchase-stages__img
+    source(srcset="../../img/index/purchase/" + name + "-360." + format type="image/" + format media="(max-width: 360px)").purchase-stages__img
+    source(srcset="../../img/index/purchase/" + name + "-768" + ".webp" type="image/webp" media="(max-width: 1285px)").purchase-stages__img
+    source(srcset="../../img/index/purchase/" + name + "-768." + format type="image/" + format media="(max-width: 1285px)").purchase-stages__img
+    source(srcset="../../img/index/purchase/" + name + "-768" + ".webp" type="image/webp" media="(max-width: 1499px)").purchase-stages__img
+    source(srcset="../../img/index/purchase/" + name + "-768." + format type="image/" + format media="(max-width: 1499px)").purchase-stages__img
+    source(srcset="../../img/index/purchase/" + name + "-1366" + ".webp" type="image/webp" media="(min-width: 1500px)").purchase-stages__img
+    source(srcset="../../img/index/purchase/" + name + "-1366." + format type="image/" + format media="(min-width: 1500px)").purchase-stages__img
+    source(srcset="../../img/index/purchase/" + name + ".webp" type="image/webp").purchase-stages__img
+    img(src="../../img/index/purchase/" + name + "." + format alt=alt).purchase-stages__img
+
+mixin good-card(title, art, price, alt, name, format="jpg")
+  li.leaders__card.good
+    .good__content
+      .swiper.good__swiper
+        .swiper-wrapper.good__swipewrapper
+          .swiper-slide.good__slide
+            picture
+              source(srcset="../../img/index/goods/" + name + "-1920" + ".webp" type="image/webp" media="(min-width: 1920px)").good__img
+              source(srcset="../../img/index/goods/" + name + "-1920." + format type="image/" + format media="(min-width: 1920px)").good__img
+              source(srcset="../../img/index/goods/" + name + "-1366" + ".webp" type="image/webp" media="(min-width: 1366px)").good__img
+              source(srcset="../../img/index/goods/" + name + "-1366." + format type="image/" + format media="(min-width: 1366px)").good__img
+              source(srcset="../../img/index/goods/" + name + "-768" + ".webp" type="image/webp" media="(min-width: 768px)").good__img
+              source(srcset="../../img/index/goods/" + name + "-768." + format type="image/" + format media="(min-width: 768px)").good__img
+              source(srcset="../../img/index/goods/" + name + "-480" + ".webp" type="image/webp" media="(min-width: 480px)").good__img
+              source(srcset="../../img/index/goods/" + name + "-480." + format type="image/" + format media="(min-width: 480px)").good__img
+              source(srcset="../../img/index/goods/" + name + ".webp" type = "image/"+"webp").good__img
+              img(src="../../img/index/goods/" + name + "." + format alt=alt).good__img
+          .swiper-slide.good__slide
+            picture
+              source(srcset="../../img/index/goods/" + name + "-1920" + ".webp" type="image/webp" media="(min-width: 1920px)").good__img
+              source(srcset="../../img/index/goods/" + name + "-1920." + format type="image/" + format media="(min-width: 1920px)").good__img
+              source(srcset="../../img/index/goods/" + name + "-1366" + ".webp" type="image/webp" media="(min-width: 1366px)").good__img
+              source(srcset="../../img/index/goods/" + name + "-1366." + format type="image/" + format media="(min-width: 1366px)").good__img
+              source(srcset="../../img/index/goods/" + name + "-768" + ".webp" type="image/webp" media="(min-width: 768px)").good__img
+              source(srcset="../../img/index/goods/" + name + "-768." + format type="image/" + format media="(min-width: 768px)").good__img
+              source(srcset="../../img/index/goods/" + name + "-480" + ".webp" type="image/webp" media="(min-width: 480px)").good__img
+              source(srcset="../../img/index/goods/" + name + "-480." + format type="image/" + format media="(min-width: 480px)").good__img
+              source(srcset="../../img/index/goods/" + name + ".webp" type = "image/"+"webp").good__img
+              img(src="../../img/index/goods/" + name + "." + format alt=alt).good__img
+          .swiper-slide.good__slide
+            picture
+              source(srcset="../../img/index/goods/" + name + "-1920" + ".webp" type="image/webp" media="(min-width: 1920px)").good__img
+              source(srcset="../../img/index/goods/" + name + "-1920." + format type="image/" + format media="(min-width: 1920px)").good__img
+              source(srcset="../../img/index/goods/" + name + "-1366" + ".webp" type="image/webp" media="(min-width: 1366px)").good__img
+              source(srcset="../../img/index/goods/" + name + "-1366." + format type="image/" + format media="(min-width: 1366px)").good__img
+              source(srcset="../../img/index/goods/" + name + "-768" + ".webp" type="image/webp" media="(min-width: 768px)").good__img
+              source(srcset="../../img/index/goods/" + name + "-768." + format type="image/" + format media="(min-width: 768px)").good__img
+              source(srcset="../../img/index/goods/" + name + "-480" + ".webp" type="image/webp" media="(min-width: 480px)").good__img
+              source(srcset="../../img/index/goods/" + name + "-480." + format type="image/" + format media="(min-width: 480px)").good__img
+              source(srcset="../../img/index/goods/" + name + ".webp" type = "image/"+"webp").good__img
+              img(src="../../img/index/goods/" + name + "." + format alt=alt).good__img
+        .swiper-pagination.good__pagination
+      svg(class='good__iso' height='20' width='25')
+        use(xlink:href='../img/sprite.svg#ISO')
+    a(href="#" aria-label='Перейти к странице товара').good__text
+      p.good__title #{title}
+      span.good__art #{art}
+      p.good__price от $#{price}
+    button.good__btn.btn.btn-fill Добавить в корзину
+    .good__form.form.hidden
+      input.form__input(value='1')
+      button.form__btn.form__btn-minus
+        svg(class='form__svg counter-minus' height='18' width='18')
+          use(xlink:href='../img/sprite.svg#counter-minus')
+      button.form__btn.form__btn-plus
+        svg(class='form__svg counter-plus' height='18' width='18')
+          use(xlink:href='../img/sprite.svg#counter-plus')
+
+
+
+mixin good-card-sale(title, art, price, alt, name, old-price, percent, format="jpg")
+  li.leaders__card.good
+    .good__content
+      .swiper.good__swiper
+        .swiper-wrapper.good__swipewrapper
+          .swiper-slide.good__slide
+            picture
+              source(srcset="../../img/index/goods/" + name + "-1920" + ".webp" type="image/webp" media="(min-width: 1920px)").good__img
+              source(srcset="../../img/index/goods/" + name + "-1920." + format type="image/" + format media="(min-width: 1920px)").good__img
+              source(srcset="../../img/index/goods/" + name + "-1366" + ".webp" type="image/webp" media="(min-width: 1366px)").good__img
+              source(srcset="../../img/index/goods/" + name + "-1366." + format type="image/" + format media="(min-width: 1366px)").good__img
+              source(srcset="../../img/index/goods/" + name + "-768" + ".webp" type="image/webp" media="(min-width: 768px)").good__img
+              source(srcset="../../img/index/goods/" + name + "-768." + format type="image/" + format media="(min-width: 768px)").good__img
+              source(srcset="../../img/index/goods/" + name + "-480" + ".webp" type="image/webp" media="(min-width: 480px)").good__img
+              source(srcset="../../img/index/goods/" + name + "-480." + format type="image/" + format media="(min-width: 480px)").good__img
+              source(srcset="../../img/index/goods/" + name + ".webp" type = "image/"+"webp").good__img
+              img(src="../../img/index/goods/" + name + "." + format alt=alt).good__img
+          .swiper-slide.good__slide
+            picture
+              source(srcset="../../img/index/goods/" + name + "-1920" + ".webp" type="image/webp" media="(min-width: 1920px)").good__img
+              source(srcset="../../img/index/goods/" + name + "-1920." + format type="image/" + format media="(min-width: 1920px)").good__img
+              source(srcset="../../img/index/goods/" + name + "-1366" + ".webp" type="image/webp" media="(min-width: 1366px)").good__img
+              source(srcset="../../img/index/goods/" + name + "-1366." + format type="image/" + format media="(min-width: 1366px)").good__img
+              source(srcset="../../img/index/goods/" + name + "-768" + ".webp" type="image/webp" media="(min-width: 768px)").good__img
+              source(srcset="../../img/index/goods/" + name + "-768." + format type="image/" + format media="(min-width: 768px)").good__img
+              source(srcset="../../img/index/goods/" + name + "-480" + ".webp" type="image/webp" media="(min-width: 480px)").good__img
+              source(srcset="../../img/index/goods/" + name + "-480." + format type="image/" + format media="(min-width: 480px)").good__img
+              source(srcset="../../img/index/goods/" + name + ".webp" type = "image/"+"webp").good__img
+              img(src="../../img/index/goods/" + name + "." + format alt=alt).good__img
+          .swiper-slide.good__slide
+            picture
+              source(srcset="../../img/index/goods/" + name + "-1920" + ".webp" type="image/webp" media="(min-width: 1920px)").good__img
+              source(srcset="../../img/index/goods/" + name + "-1920." + format type="image/" + format media="(min-width: 1920px)").good__img
+              source(srcset="../../img/index/goods/" + name + "-1366" + ".webp" type="image/webp" media="(min-width: 1366px)").good__img
+              source(srcset="../../img/index/goods/" + name + "-1366." + format type="image/" + format media="(min-width: 1366px)").good__img
+              source(srcset="../../img/index/goods/" + name + "-768" + ".webp" type="image/webp" media="(min-width: 768px)").good__img
+              source(srcset="../../img/index/goods/" + name + "-768." + format type="image/" + format media="(min-width: 768px)").good__img
+              source(srcset="../../img/index/goods/" + name + "-480" + ".webp" type="image/webp" media="(min-width: 480px)").good__img
+              source(srcset="../../img/index/goods/" + name + "-480." + format type="image/" + format media="(min-width: 480px)").good__img
+              source(srcset="../../img/index/goods/" + name + ".webp" type = "image/"+"webp").good__img
+              img(src="../../img/index/goods/" + name + "." + format alt=alt).good__img
+        .swiper-pagination.good__pagination
+      .good__sale
+        p.good__percent -#{percent}%
+      svg(class='good__iso' height='20' width='25')
+        use(xlink:href='../img/sprite.svg#ISO')
+    a(href="#" aria-label='Перейти к странице товара').good__text
+      p.good__title #{title}
+      span.good__art #{art}
+      p.good__oldprice
+        strike от $#{price-old}
+      p.good__price от $#{price}
+    button.good__btn.btn.btn-fill Добавить в корзину
+
+//- mixin goods(alt, name, format="jpg")
+//-   picture
+//-     source(srcset="../../img/index/goods/" + name + "-1920" + ".webp" type="image/webp" media="(min-width: 1920px)").good__img
+//-     source(srcset="../../img/index/goods/" + name + "-1920." + format type="image/" + format media="(min-width: 1920px)").good__img
+//-     source(srcset="../../img/index/goods/" + name + "-1366" + ".webp" type="image/webp" media="(min-width: 1366px)").good__img
+//-     source(srcset="../../img/index/goods/" + name + "-1366." + format type="image/" + format media="(min-width: 1366px)").good__img
+//-     source(srcset="../../img/index/goods/" + name + "-768" + ".webp" type="image/webp" media="(min-width: 768px)").good__img
+//-     source(srcset="../../img/index/goods/" + name + "-768." + format type="image/" + format media="(min-width: 768px)").good__img
+//-     source(srcset="../../img/index/goods/" + name + "-480" + ".webp" type="image/webp" media="(min-width: 480px)").good__img
+//-     source(srcset="../../img/index/goods/" + name + "-480." + format type="image/" + format media="(min-width: 480px)").good__img
+//-     source(srcset="../../img/index/goods/" + name + ".webp" type = "image/"+"webp").good__img
+//-     img(src="../../img/index/goods/" + name + "." + format alt=alt).good__img

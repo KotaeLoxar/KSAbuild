@@ -1,0 +1,44 @@
+.purchase-stages {
+  &__pagination {
+    position: relative;
+    margin-top: 20px;
+  }
+
+  &__slide {
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    @include bodyText-regular(24px, 120%)
+  }
+
+  &__duration {
+    margin-bottom: 25px;
+    @include bodyText-light(14px, 140%);
+    color: $black0_5;
+  }
+
+  &__description {
+    @include bodyText-regular(16px, 150%);
+  }
+
+  &__text-container {
+    max-width: 310px;
+    max-height: 350px;
+    margin-left: 40px;
+    overflow: scroll;
+  }
+}
+.swiper-slide {
+  position: relative;
+  width: 80%;
+  height: 100%;
+}
+
+.purchase-stages .swiper-pagination-bullet {
+  background: $black;
+}
+
+@import '../../mixins/media/@purchase-stages.scss';
